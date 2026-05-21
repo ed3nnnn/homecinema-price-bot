@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+discord-webhook
+PyYAML
+rapidfuzz
+lxml
+schedule

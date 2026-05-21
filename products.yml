@@ -1,0 +1,39 @@
+products:
+
+  - name: "Denon AVR-X2800H"
+    keywords:
+      - "Denon AVR-X2800H"
+      - "Denon X2800H"
+    min_real_price: 500
+    target_price: 649
+    mega_deal_price: 599
+    expected_price: 749
+
+  - name: "Epson EH-TW7000"
+    keywords:
+      - "Epson EH-TW7000"
+      - "Epson TW7000"
+    min_real_price: 850
+    target_price: 1099
+    mega_deal_price: 999
+    expected_price: 1399
+
+  - name: "SVS SB-1000 Pro"
+    keywords:
+      - "SVS SB-1000 Pro"
+      - "SVS SB1000"
+    min_real_price: 450
+    target_price: 599
+    mega_deal_price: 529
+    expected_price: 699
+
+  - name: "Triangle Borea Pack"
+    keywords:
+      - "Triangle Borea"
+      - "Triangle BR08"
+      - "Triangle BR07"
+      - "Triangle BR03"
+    min_real_price: 700
+    target_price: 1200
+    mega_deal_price: 999
+    expected_price: 1490
