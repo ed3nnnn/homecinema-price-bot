@@ -27,13 +27,67 @@ products:
     mega_deal_price: 529
     expected_price: 699
 
-  - name: "Triangle Borea Pack"
+  - name: "Triangle Pack 5.0 BR03"
     keywords:
-      - "Triangle Borea"
-      - "Triangle BR08"
-      - "Triangle BR07"
-      - "Triangle BR03"
-    min_real_price: 700
-    target_price: 1200
+      - "Triangle Pack 5.0 BR03"
+      - "Pack 5.0 BR03"
+      - "Triangle Borea BR03 pack"
+      - "Triangle BR03 home cinema"
+      - "Triangle Borea 5.0"
+      - "Triangle BR03 BRC1 BR02"
+      - "Triangle pack home cinema"
+    min_real_price: 850
+    target_price: 1150
     mega_deal_price: 999
-    expected_price: 1490
+    expected_price: 1290
+
+  - name: "Triangle Pack Borea BR08 5.0"
+    keywords:
+      - "Triangle Pack Borea BR08 5.0"
+      - "Triangle BR08 5.0"
+      - "Triangle BR08 BRC1 BR03"
+      - "Triangle BR08 home cinema"
+      - "Triangle Borea BR08 pack"
+    min_real_price: 1200
+    target_price: 1500
+    mega_deal_price: 1350
+    expected_price: 1700
+
+  - name: "Triangle Pack Borea BR09 5.0"
+    keywords:
+      - "Triangle Pack Borea BR09 5.0"
+      - "Triangle BR09 5.0"
+      - "Triangle BR09 BRC2 BR03"
+      - "Triangle BR09 home cinema"
+      - "Triangle Borea BR09 pack"
+    min_real_price: 1500
+    target_price: 1850
+    mega_deal_price: 1700
+    expected_price: 2100
+
+  - name: "Triangle Borea BR03"
+    keywords:
+      - "Triangle Borea BR03"
+      - "Triangle BR03"
+    min_real_price: 300
+    target_price: 350
+    mega_deal_price: 299
+    expected_price: 449
+
+  - name: "Triangle Borea BR08"
+    keywords:
+      - "Triangle Borea BR08"
+      - "Triangle BR08"
+    min_real_price: 800
+    target_price: 950
+    mega_deal_price: 850
+    expected_price: 1099
+
+  - name: "Triangle Borea BR09"
+    keywords:
+      - "Triangle Borea BR09"
+      - "Triangle BR09"
+    min_real_price: 1000
+    target_price: 1200
+    mega_deal_price: 1099
+    expected_price: 1400
