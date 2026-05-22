@@ -32,39 +32,74 @@ except:
 
 SOURCES = [
 
+    # FRANCE
+
     {
         "name": "Amazon FR",
+        "country": "FR",
         "url": "https://www.amazon.fr/s?k={query}"
     },
 
     {
-        "name": "Amazon DE",
-        "url": "https://www.amazon.de/s?k={query}"
-    },
-
-    {
-        "name": "Idealo",
+        "name": "Idealo FR",
+        "country": "FR",
         "url": "https://www.idealo.fr/resultats.html?q={query}"
     },
 
     {
-        "name": "Dealabs",
-        "url": "https://www.dealabs.com/search?q={query}"
-    },
-
-    {
         "name": "Son-Video",
+        "country": "FR",
         "url": "https://www.son-video.com/recherche/{query}"
     },
 
     {
         "name": "Cobra",
+        "country": "FR",
         "url": "https://www.cobra.fr/search?controller=search&s={query}"
     },
 
     {
         "name": "HomeCineSolutions",
+        "country": "FR",
         "url": "https://www.homecinesolutions.fr/search?search_query={query}"
+    },
+
+    # ALLEMAGNE
+
+    {
+        "name": "Amazon DE",
+        "country": "DE",
+        "url": "https://www.amazon.de/s?k={query}"
+    },
+
+    {
+        "name": "Idealo DE",
+        "country": "DE",
+        "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q={query}"
+    },
+
+    # ESPAGNE
+
+    {
+        "name": "Amazon ES",
+        "country": "ES",
+        "url": "https://www.amazon.es/s?k={query}"
+    },
+
+    # ITALIE
+
+    {
+        "name": "Amazon IT",
+        "country": "IT",
+        "url": "https://www.amazon.it/s?k={query}"
+    },
+
+    # DEALS
+
+    {
+        "name": "Dealabs",
+        "country": "FR",
+        "url": "https://www.dealabs.com/search?q={query}"
     },
 ]
 
@@ -133,7 +168,14 @@ def fetch_page(url):
     return None
 
 
-def send_discord_alert(product, price, source, link, previous):
+def send_discord_alert(
+    product,
+    price,
+    source,
+    country,
+    link,
+    previous
+):
 
     drop = previous - price if previous else 0
 
@@ -145,6 +187,7 @@ def send_discord_alert(product, price, source, link, previous):
         title = "🔥 BON DEAL HOME CINÉMA"
 
     embed = {
+
         "title": title,
 
         "description": f"""
@@ -164,6 +207,12 @@ def send_discord_alert(product, price, source, link, previous):
             {
                 "name": "🏪 Boutique",
                 "value": source,
+                "inline": True
+            },
+
+            {
+                "name": "🌍 Pays",
+                "value": country,
                 "inline": True
             },
 
@@ -223,6 +272,7 @@ def analyze_product(product):
 
     best_price = None
     best_source = None
+    best_country = None
     best_link = None
 
     print("")
@@ -267,6 +317,7 @@ def analyze_product(product):
 
                 best_price = price
                 best_source = source["name"]
+                best_country = source["country"]
                 best_link = url
 
             time.sleep(2)
@@ -290,6 +341,7 @@ def analyze_product(product):
             product,
             best_price,
             best_source,
+            best_country,
             best_link,
             previous_price or product["expected_price"]
         )
@@ -307,7 +359,7 @@ def run_bot():
 
     print("")
     print("=" * 60)
-    print("CHECKING HOME CINEMA DEALS")
+    print("CHECKING EUROPE HOME CINEMA DEALS")
     print("=" * 60)
 
     for product in PRODUCTS:
